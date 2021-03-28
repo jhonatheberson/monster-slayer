@@ -1,0 +1,54 @@
+<script src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="main.css">
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>monster-slayer</title>
+</head>
+<body>
+  <div id="app">
+    <span>
+        <h2>Mostro</h2>
+        <div class="barra-progresso">
+          <div :style="[class_monster, {width:life_monster}]"></div>
+        </div>
+        <h3>{{life_monster}}%</h3>
+      <h2>Jogador</h2>
+      <div class="barra-progresso">
+        <div :style="[class_slayer, {width:life_slayer}]"></div>
+      </div>
+      <h3>{{life_slayer}}%</h3>
+    </span>
+    <div v-if="win==true && play==false">
+      <h1>Você ganhou :)</h1>
+    </div>
+    <div v-if="win==false && play==false">
+      <h1>Você perdeu :(</h1>
+    </div>
+    <hr>
+    <span>
+      <div v-if="!play">
+        <button class="buton-novo-jogo" @click="iniciar()">INICIAR NOVO JOGO</button>
+      </div>
+      <div v-else>
+        <button class="buton-atack" @click="atack()">ATAQUE</button>
+        <button class="buton-atack-special" @click="atack_especial()">ATAQUE ESPECIAL</button>
+        <button class="buton-curar" @click="curar()">CURAR</button>
+        <button class="buton-desistir" @click="desistir">DESISTIR</button>
+      </div>
+    </span>
+    <hr>
+    <template>
+      <div v-for="atacks in log">
+        JOGADOR ATINGIU MONSTRO COM {{atacks.atack_slayer}}. <br>
+        MOSTRO ATINGIU JOGADOR COM {{atacks.atack_monster}}.
+      </div >
+    </template>
+  </div>
+</body>
+</html>
+<script src="main.js"></script>
+

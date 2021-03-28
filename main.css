@@ -1,0 +1,41 @@
+.h2 {
+  initial-letter-align: true;
+}
+.barra-progresso{
+  height: 30px;
+  width: 100px;
+  border: 1px solid #000;
+}
+
+.buton-atack{
+  background-color: red;
+  border: 1px solid #000;
+  color: white;
+  height: 25px;
+}
+
+.buton-atack-special{
+  background-color: orange;
+  border: 1px solid #000;
+  height: 25px;
+}
+
+.buton-curar{
+  background-color: green;
+  border: 1px solid #000;
+  color: white;
+  height: 25px;
+}
+
+.buton-desistir{
+  background-color: gray;
+  border: 1px solid #000;
+  height: 25px;
+}
+
+.buton-novo-jogo{
+  background-color: blue;
+  color: white;
+  border: 1px solid #000;
+  height: 25px;
+}
